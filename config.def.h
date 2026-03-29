@@ -143,13 +143,13 @@ static const char *termcmd[]      = { TERMINAL, NULL };
 static const char *menucmd[]      = { "fuzzel", NULL };
 static const char *browser[]      = { "firefox", NULL };
 static const char *file_manager[] = { TERMINAL, "--class", "ranger", "-e", "ranger", NULL };
-static const char *powermenu[]    = { "powermenu_wayland", NULL };
+static const char *powermenu[]    = { "fuzzel-powermenu", NULL };
 //static const char *network[]      = { "networkmanager_dmenu", "--config", "~/.config/networkmanager-dmenu/fuzzel.ini", NULL };
 //static const char *bluetooth[]    = { "DMENU_BLUETOOTH_LAUNCHER='fuzzel --dmenu --minimal-lines'", "dmenu-bluetooth", NULL };
 //static const char *passmenu[]     = { "passmenu", "-m", dmenumon, NULL };
 //static const char *screenshot[]   = { "dmenu-screenshot", "-m", dmenumon, NULL };
-static const char *todo[]         = { "todo_wayland", NULL };
-static const char *vpn[]          = { "vpn_wayland", NULL };
+static const char *todo[]         = { "fuzzel-todo", NULL };
+static const char *vpn[]          = { "fuzzel-vpn", NULL };
 //static const char *xrandr[]       = { "dmenu-xrandr", "-m", dmenumon, NULL };
 
 static const Key keys[] = {
@@ -195,12 +195,12 @@ static const Key keys[] = {
     { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,           spawn,            SHCMD("DMENU_BLUETOOTH_LAUNCHER='fuzzel --dmenu --minimal-lines' dmenu-bluetooth") },
     { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_t,           spawn,            {.v = todo } },
     { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_v,           spawn,            {.v = vpn } },
-    { 0,                         XKB_KEY_XF86AudioRaiseVolume,      spawn,    SHCMD("volumeControl.sh up") },
-    { 0,                         XKB_KEY_XF86AudioLowerVolume,      spawn,    SHCMD("volumeControl.sh down") },
-    { 0,                         XKB_KEY_XF86AudioMute,             spawn,    SHCMD("volumeControl.sh mute") },
+    { 0,                         XKB_KEY_XF86AudioRaiseVolume,      spawn,    SHCMD("volume-control up") },
+    { 0,                         XKB_KEY_XF86AudioLowerVolume,      spawn,    SHCMD("volume-control down") },
+    { 0,                         XKB_KEY_XF86AudioMute,             spawn,    SHCMD("volume-control mute") },
     { 0,                         XKB_KEY_XF86AudioMicMute,          spawn,    SHCMD("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle") },
-    { 0,                         XKB_KEY_XF86MonBrightnessUp,       spawn,    SHCMD("brightnessControl.sh up") },
-    { 0,                         XKB_KEY_XF86MonBrightnessDown,     spawn,    SHCMD("brightnessControl.sh down") },
+    { 0,                         XKB_KEY_XF86MonBrightnessUp,       spawn,    SHCMD("brightness-control up") },
+    { 0,                         XKB_KEY_XF86MonBrightnessDown,     spawn,    SHCMD("brightness-control down") },
 
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
 	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
