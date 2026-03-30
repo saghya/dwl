@@ -142,12 +142,12 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 static const char *termcmd[]      = { TERMINAL, NULL };
 static const char *menucmd[]      = { "fuzzel", NULL };
 static const char *browser[]      = { "firefox", NULL };
-static const char *file_manager[] = { TERMINAL, "--class", "ranger", "-e", "ranger", NULL };
+static const char *file_manager[] = { TERMINAL, "-w", "850x600", "-a", "ranger", "-e", "ranger", NULL };
 static const char *powermenu[]    = { "fuzzel-powermenu", NULL };
 //static const char *network[]      = { "networkmanager_dmenu", "--config", "~/.config/networkmanager-dmenu/fuzzel.ini", NULL };
 //static const char *bluetooth[]    = { "DMENU_BLUETOOTH_LAUNCHER='fuzzel --dmenu --minimal-lines'", "dmenu-bluetooth", NULL };
 //static const char *passmenu[]     = { "passmenu", "-m", dmenumon, NULL };
-//static const char *screenshot[]   = { "dmenu-screenshot", "-m", dmenumon, NULL };
+static const char *screenshot[]   = { "fuzzel-screenshot", NULL };
 static const char *todo[]         = { "fuzzel-todo", NULL };
 static const char *vpn[]          = { "fuzzel-vpn", NULL };
 //static const char *xrandr[]       = { "dmenu-xrandr", "-m", dmenumon, NULL };
@@ -193,6 +193,7 @@ static const Key keys[] = {
     { MODKEY,                    XKB_KEY_x,           spawn,            {.v = powermenu } },
     { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_n,           spawn,            SHCMD("networkmanager_dmenu --config ~/.config/networkmanager-dmenu/fuzzel.ini") },
     { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,           spawn,            SHCMD("DMENU_BLUETOOTH_LAUNCHER='fuzzel --dmenu --minimal-lines' dmenu-bluetooth") },
+    { 0,                         XKB_KEY_Print,       spawn,            {.v = screenshot } },
     { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_t,           spawn,            {.v = todo } },
     { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_v,           spawn,            {.v = vpn } },
     { 0,                         XKB_KEY_XF86AudioRaiseVolume,      spawn,    SHCMD("volume-control up") },
